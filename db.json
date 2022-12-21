@@ -1,0 +1,50 @@
+{
+  "contact": [
+    {
+      "name": "Кубан",
+      "phone": "+996555936565",
+      "photo": "ttt",
+      "email": "aibekkoikelov@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "Кубан",
+      "phone": "+996555936565",
+      "photo": "ttt",
+      "email": "aibekkoikelov@gmail.com",
+      "id": 4
+    },
+    {
+      "name": "Кубан",
+      "phone": "+996555936565",
+      "photo": "ttt",
+      "email": "aibekkoikelov@gmail.com",
+      "id": 5
+    },
+    {
+      "name": "Кубан",
+      "phone": "+996555936565",
+      "photo": "ttt",
+      "email": "aibekkoikelov@gmail.com",
+      "id": 6
+    },
+    {
+      "id": "3a90b69a-fac8-4e68-b487-48e633fcb5fb",
+      "name": "",
+      "phone": "",
+      "photo": "",
+      "email": ""
+    },
+    {
+      "id": "b2bccecb-02d8-4b70-9e4f-533c396e7785",
+      "published": true
+    },
+    {
+      "id": "2793e98a-c685-4d48-a201-0474db0edb14",
+      "name": "",
+      "phone": "",
+      "photo": "",
+      "email": ""
+    }
+  ]
+}

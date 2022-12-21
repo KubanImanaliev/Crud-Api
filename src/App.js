@@ -12,18 +12,18 @@ class App extends Component {
     return (
       <div>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <Link to={"/tutorials"} className="navbar-brand">
-            bezKoder
+          <Link to={"/contacts"} className="navbar-brand">
+            contactBook
           </Link>
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link to={"/tutorials"} className="nav-link">
-                Tutorials
+              <Link to={"/contacts"} className="nav-link">
+                Contact list
               </Link>
             </li>
             <li className="nav-item">
               <Link to={"/add"} className="nav-link">
-                Add
+                Add Contact
               </Link>
             </li>
           </div>
@@ -32,9 +32,9 @@ class App extends Component {
         <div className="container mt-3">
           <Routes>
             <Route path="/" element={<TutorialsList/>} />
-            <Route path="/tutorials" element={<TutorialsList/>} />
+            <Route path="/contacts" element={<TutorialsList/>} />
             <Route path="/add" element={<AddTutorial/>} />
-            <Route path="/tutorials/:id" element={<Tutorial/>} />
+            <Route path="/contacts/:id" element={<Tutorial/>} />
           </Routes>
         </div>
       </div>

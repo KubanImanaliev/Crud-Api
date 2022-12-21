@@ -5,8 +5,10 @@ import { withRouter } from '../common/with-router';
 class Tutorial extends Component {
   constructor(props) {
     super(props);
-    this.onChangeTitle = this.onChangeTitle.bind(this);
-    this.onChangeDescription = this.onChangeDescription.bind(this);
+    this.onChangeName = this.onChangeName.bind(this);
+    this.onChangePhone = this.onChangePhone.bind(this);
+    this.onChangePhoto = this.onChangePhoto.bind(this);
+    this.onChangeEmail = this.onChangeEmail.bind(this);
     this.getTutorial = this.getTutorial.bind(this);
     this.updatePublished = this.updatePublished.bind(this);
     this.updateTutorial = this.updateTutorial.bind(this);
@@ -15,9 +17,10 @@ class Tutorial extends Component {
     this.state = {
       currentTutorial: {
         id: null,
-        title: "",
-        description: "",
-        published: false
+        name: "",
+        phone: "",
+        photo: "",
+        email: ""
       },
       message: ""
     };
@@ -27,26 +30,48 @@ class Tutorial extends Component {
     this.getTutorial(this.props.router.params.id);
   }
 
-  onChangeTitle(e) {
-    const title = e.target.value;
+  onChangeName(e) {
+    const name = e.target.value;
 
     this.setState(function(prevState) {
       return {
         currentTutorial: {
           ...prevState.currentTutorial,
-          title: title
+          name: name
         }
       };
     });
   }
 
-  onChangeDescription(e) {
-    const description = e.target.value;
+  onChangePhone(e) {
+    const phone = e.target.value;
     
     this.setState(prevState => ({
       currentTutorial: {
         ...prevState.currentTutorial,
-        description: description
+        phone: phone
+      }
+    }));
+  }
+
+  onChangePhoto(e) {
+    const photo = e.target.value;
+    
+    this.setState(prevState => ({
+      currentTutorial: {
+        ...prevState.currentTutorial,
+        photo: photo
+      }
+    }));
+  }
+
+  onChangeEmail(e) {
+    const email = e.target.value;
+    
+    this.setState(prevState => ({
+      currentTutorial: {
+        ...prevState.currentTutorial,
+        email: email
       }
     }));
   }
@@ -121,35 +146,59 @@ class Tutorial extends Component {
       <div>
         {currentTutorial ? (
           <div className="edit-form">
-            <h4>Tutorial</h4>
+            <h4>Contacts</h4>
             <form>
-              <div className="form-group">
-                <label htmlFor="title">Title</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="title"
-                  value={currentTutorial.title}
-                  onChange={this.onChangeTitle}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="description">Description</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="description"
-                  value={currentTutorial.description}
-                  onChange={this.onChangeDescription}
-                />
-              </div>
+            <div className="form-group">
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                className="form-control"
+                id="name"
+                required
+                value={currentTutorial.name}
+                onChange={this.onChangeName}
+                name="name"
+              />
+            </div>
 
-              <div className="form-group">
-                <label>
-                  <strong>Status:</strong>
-                </label>
-                {currentTutorial.published ? "Published" : "Pending"}
-              </div>
+            <div className="form-group">
+              <label htmlFor="phone">Phone</label>
+              <input
+                type="text"
+                className="form-control"
+                id="phone"
+                required
+                value={currentTutorial.phone}
+                onChange={this.onChangePhone}
+                name="phone"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="photo">Photo</label>
+              <input
+                type="text"
+                className="form-control"
+                id="photo"
+                required
+                value={currentTutorial.photo}
+                onChange={this.onChangePhoto}
+                name="photo"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="email">email</label>
+              <input
+                type="text"
+                className="form-control"
+                id="email"
+                required
+                value={currentTutorial.email}
+                onChange={this.onChangeEmail}
+                name="email"
+              />
+            </div>
             </form>
 
             {currentTutorial.published ? (
